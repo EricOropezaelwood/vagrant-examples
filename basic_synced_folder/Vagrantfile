@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+Vagrant.configure("2") do |config|
+
+  # choose "box"
+  config.vm.box = "ubuntu/focal64"
+
+  # run ansible playbook
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
+
+  # shared folder
+  #  /home/vagrant as a destination will error out, choose a subsequent folder
+  #   https://www.vagrantup.com/docs/synced-folders/basic_usage
+  config.vm.synced_folder 'data/', '/home/vagrant/data'
+
+end
