@@ -8,6 +8,7 @@
 * [Naming the VM](#Naming-the-VM)
 * [Resource Management](#Resource-Management)
 * [Environment Variables](#Environment-Variables)
+* [Run Ansible](#Run-Ansible)
 
 
 ## Ubuntu 20.04
@@ -93,4 +94,16 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-
+# Run Ansible 
+Ansible can be run from a Vagrantfile directly. Add the following to run a playbook  
+from the Vagrantfile  
+```
+Vagrant.configure("2") do |config|
+  ...
+  # run ansible playbook
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
+  ...
+end
+```
