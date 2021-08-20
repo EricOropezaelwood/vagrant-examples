@@ -1,0 +1,7 @@
+---
+- name: Curl the minikube binary
+  get_url:
+    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    dest: /tmp
+- name: Install the binary
+  command: "install /tmp//minikube-linux-amd64 /usr/local/bin/minikube"
