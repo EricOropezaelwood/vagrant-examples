@@ -82,7 +82,7 @@ project-dir
 └───.env
 └───Vagrantfile
 ```
-Then we can use variables like so:  
+Then we can use variables like so inside .env:  
 ```
 MASTERS_CPU=2
 MASTERS_MEM=4096
