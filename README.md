@@ -75,8 +75,14 @@ end
 To make the Vagrantfile environment variable friendly, we can use the Vagrant  
 plugin called vagrant-env. To install the plugin, run:  
 ```vagrant plugin install vagrant-env```  
-With the plugin we can use a .env file at the same level as our Vagrantfile. Then  
-we can use variables like so:  
+With the plugin we can use a .env file at the same level as our Vagrantfile.  
+```
+project-dir
+|
+└───.env
+└───Vagrantfile
+```
+Then we can use variables like so:  
 ```
 MASTERS_CPU=2
 MASTERS_MEM=4096
